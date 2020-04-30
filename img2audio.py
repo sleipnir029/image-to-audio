@@ -9,6 +9,7 @@ print(len(pixels))
 width, height = img.size
 fpixels = list(itertools.chain(*pixels))
 print(len(fpixels))
+print("*****Preparing*****")
 
 """
 # Histogram of pixel values, used for custom note assignment
@@ -98,3 +99,4 @@ for i in range(len(fpixels)):
     rc = int(32767.0 * math.cos(rFreq[i]*math.pi*float(i) / float(sampleRate)))
     fwave.writeframesraw(struct.pack('<hh', lc, rc))
 fwave.close()
+print("=====Done======")
