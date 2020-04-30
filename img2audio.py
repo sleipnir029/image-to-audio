@@ -71,3 +71,13 @@ def notesDistribution(value):
         l = notes[0]
         r = notes[7]
     return l, r
+
+
+
+# Generating left and right channel frequencies
+lFreq = []
+rFreq = []
+for i in fpixels:
+    l, r = notesDistribution(i)
+    lFreq.append(l)
+    rFreq.append(r)
