@@ -16,3 +16,57 @@ counts = {}
 for i in fpixels:
     counts[i] = counts.get(i, 0) + 1
 print(counts)
+
+
+# Distributing notes across pixel values
+def notesDistribution(value):
+    notes = [440.00, 493.88, 523.25, 587.33,
+            659.25, 698.46, 783.99, 880.00,
+            987.77, 1046.50, 1174.66, 1318.51,
+            1396.91, 1567.98, 1760.00]
+    
+    if value <= 17:
+        l = notes[0]
+        r = notes[7]
+    elif value > 17 and value <= 34:
+        l = notes[1]
+        r = notes[8]
+    elif value > 34 and value <= 51:
+        l = notes[3]
+        r = notes[10]
+    elif value > 51 and value <= 68:
+        l = notes[4]
+        r = notes[11]
+    elif value > 68 and value <= 85:
+        l = notes[5]
+        r = notes[12]
+    elif value > 85 and value <= 102:
+        l = notes[6]
+        r = notes[13]
+    elif value > 102 and value <= 119:
+        l = notes[7]
+        r = notes[14]
+    elif value > 119 and value <= 136:
+        l = notes[8]
+        r = notes[1]
+    elif value > 136 and value <= 153:
+        l = notes[9]
+        r = notes[2]
+    elif value > 153 and value <= 170:
+        l = notes[10]
+        r = notes[3]
+    elif value > 170 and value <= 187:
+        l = notes[11]
+        r = notes[4]
+    elif value > 187 and value <= 204:
+        l = notes[12]
+        r = notes[5]
+    elif value > 204 and value <= 221:
+        l = notes[13]
+        r = notes[6]
+    elif value > 221 and value <= 238:
+        l = notes[14]
+        r = notes[7]
+    elif value > 238:
+        l = notes[0]
+        r = notes[7]
