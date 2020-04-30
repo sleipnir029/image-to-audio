@@ -11,13 +11,13 @@ fpixels = list(itertools.chain(*pixels))
 print(len(fpixels))
 print("*****Preparing*****")
 
-"""
-# Histogram of pixel values, used for custom note assignment
-counts = {}
-for i in fpixels:
-    counts[i] = counts.get(i, 0) + 1
-print(counts)
-"""
+
+# Histogram of pixel values, used for custom note assignment 
+#counts = {}
+#for i in fpixels:
+#    counts[i] = counts.get(i, 0) + 1
+#print(counts)
+
 
 # Distributing notes across pixel values
 def notesDistribution(value):
