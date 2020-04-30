@@ -10,13 +10,13 @@ width, height = img.size
 fpixels = list(itertools.chain(*pixels))
 print(len(fpixels))
 
-
+"""
 # Histogram of pixel values, used for custom note assignment
 counts = {}
 for i in fpixels:
     counts[i] = counts.get(i, 0) + 1
 print(counts)
-
+"""
 
 # Distributing notes across pixel values
 def notesDistribution(value):
@@ -73,7 +73,6 @@ def notesDistribution(value):
     return l, r
 
 
-
 # Generating left and right channel frequencies
 lFreq = []
 rFreq = []
@@ -83,7 +82,7 @@ for i in fpixels:
     rFreq.append(r)
 
 
-# audio settings
+# Audio settings
 sampleRate = 44100.00
 duration = int(len(fpixels) / sampleRate)
 
@@ -92,3 +91,10 @@ fwave.setnchannels(2)           # 1-mono, 2-stereo
 fwave.setsampwidth(2)           # 1-8bitInt, 2-16biInt, 4-32bitInt
 fwave.setframerate(sampleRate)
 
+
+# Creating the audio file
+for i in range(len(fpixels)):
+    lc = int(32767.0 * math.cos(lFreq[i]*math.pi*float(i) / float(sampleRate)))
+    rc = int(32767.0 * math.cos(rFreq[i]*math.pi*float(i) / float(sampleRate)))
+    fwave.writeframesraw(struct.pack('<hh', lc, rc))
+fwave.close()
