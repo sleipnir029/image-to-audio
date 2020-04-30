@@ -81,3 +81,14 @@ for i in fpixels:
     l, r = notesDistribution(i)
     lFreq.append(l)
     rFreq.append(r)
+
+
+# audio settings
+sampleRate = 44100.00
+duration = int(len(fpixels) / sampleRate)
+
+fwave = wave.open('test_sound.wav', 'w')
+fwave.setnchannels(2)           # 1-mono, 2-stereo
+fwave.setsampwidth(2)           # 1-8bitInt, 2-16biInt, 4-32bitInt
+fwave.setframerate(sampleRate)
+
