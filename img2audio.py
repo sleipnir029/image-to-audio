@@ -70,3 +70,4 @@ def notesDistribution(value):
     elif value > 238:
         l = notes[0]
         r = notes[7]
+    return l, r
