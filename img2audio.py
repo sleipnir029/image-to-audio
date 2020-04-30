@@ -9,3 +9,10 @@ print(len(pixels))
 width, height = img.size
 fpixels = list(itertools.chain(*pixels))
 print(len(fpixels))
+
+
+# Histogram of pixel values, used for custom note assignment
+counts = {}
+for i in fpixels:
+    counts[i] = counts.get(i, 0) + 1
+print(counts)
